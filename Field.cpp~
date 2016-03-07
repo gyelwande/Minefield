@@ -50,8 +50,7 @@ FieldType Field::get(int x, int y)
 **/
  bool Field::isSafe(int x, int y)
  {
-      
-  if(_map[x][y] == MINE_HIDDEN)
+       if(_map[x][y] == MINE_HIDDEN)
     
     return false
  	return true;
