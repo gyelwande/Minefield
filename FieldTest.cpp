@@ -25,36 +25,18 @@ TEST(FieldTest, placeMineInBounds)
 
 TEST(FieldTest, safePosiition)
 {
-	Field minefield;
-         minefield.isSafe(6,6);
-        ASSERT_TRUE( minefield.isSafe(6,6) );	
+	Field safePosition;
+        safePosition.isSafe(6,6);
+        ASSERT_TRUE( safePosition.isSafe(6,6) );
+
+	
 }
 
-TEST(FieldTest, safePosiition1)
-{
-	Field minefield;
-        minefield.isSafe(3,4);
-        ASSERT_TRUE( minefield.isSafe(3,4) );	
-}
-
-TEST(FieldTest, safePosiitionLeft)
-{
-	Field minefield;
-        minefield.isSafe(3,5);
-        ASSERT_TRUE( minefield.isSafe(3,5) );	
-}
-
-TEST(FieldTest, safePosiitionRight)
-{
-	Field minefield;
-        minefield.isSafe(3,6);
-        ASSERT_TRUE( minefield.isSafe(3,6) );	
-}
 TEST(FieldTest, placeMine)
 {
-	Field minefield;
-        minefield.isSafe(2,5);
-        ASSERT_TRUE(minefield.isSafe(2,5) );	
+	Field placeMine;
+        placeMine.isSafe(2,5);
+        ASSERT_TRUE(placeMine.isSafe(2,5) );	
 }
 
 TEST(FieldTest, placeMineInBound)
@@ -62,4 +44,10 @@ TEST(FieldTest, placeMineInBound)
 	Field minefield;
         minefield.isSafe(6,1);
         ASSERT_TRUE(minefield.isSafe(6,1) );	
+}
+TEST(FieldTest, placeMineOutOfBound)
+{
+	Field placeMineOutOfBound;
+        placeMineOutOfBound.isSafe(6,1);
+        ASSERT_TRUE(placeMineOutOfBound.isSafe(6,11) );	
 }

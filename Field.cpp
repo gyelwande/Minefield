@@ -50,12 +50,27 @@ FieldType Field::get(int x, int y)
 **/
  bool Field::isSafe(int x, int y)
  {
-      
-  if(_map[x][y] == MINE_HIDDEN)
-    
-    return false
- 	return true;
- }
+
+    bool flag=false;
+  try
+   {
+      if(_map[x][y] == MINE_HIDDEN)
+      {
+         flag= false;
+         throw "Illegal Location found";
+      }
+      else
+      {
+         flag= true;
+      }
+   }
+   catch(int err)
+   {
+     return flag;
+   }
+
+    return flag;
+  }
 
 /**
  * Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the 
